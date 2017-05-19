@@ -4,6 +4,7 @@ package com.lq.test.vo;
  * Created by Administrator on 2017/5/18 0018.
  */
 public class Student {
+    private int id;
     private String username;
     private String password;
     private String name;
@@ -39,5 +40,13 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

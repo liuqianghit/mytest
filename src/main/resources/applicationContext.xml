@@ -36,4 +36,9 @@
         <property name="password" value="asdasd"/>
         <property name="name" value="liuqiang"/>
     </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="codeSafeDataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+    </bean>
 </beans>

@@ -9,15 +9,11 @@ import org.springframework.stereotype.Repository;
  * Created by Administrator on 2017/5/18 0018.
  */
 @Repository
-public class LoginDaoImpl implements LoginDao{
+public class LoginDaoImpl extends BaseDao  implements LoginDao {
+    private final static String NAMESPACE = "com.lq.test.";
     @Autowired
     private Student student;
     public Student getStudent(String username) {
-        if(username == null)
-            return null;
-        if(username.equals(student.getUsername()))
-            return student;
-        else
-            return null;
+        return this.getSqlSession().selectOne(NAMESPACE + "queryStudent" ,username);
     }
 }
